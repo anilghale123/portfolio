@@ -71,3 +71,27 @@ $(document).ready(function(){
         }
     });
 });
+
+function submitForm(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Make an HTTP request to the Google Apps Script web app
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        alert(data.result === 'success' ? 'Data added successfully' : 'Error adding data');
+        form.reset();
+    })
+    .catch(error => console.error('Error!', error.message));
+}
