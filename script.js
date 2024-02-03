@@ -90,7 +90,7 @@ function submitForm(event) {
         return response.json();
     })
     .then(data => {
-        alert(data.result === 'success' ? 'Data added successfully' : 'Error adding data');
+        alert(data.result === 'success' ? 'Your Message Submmited successfully' : 'Error adding data');
         form.reset();
     })
     .catch(error => console.error('Error!', error.message));
