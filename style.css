@@ -317,6 +317,14 @@ section .title::after{
     margin: 10px 0 7px 0;
 }
 
+.services img{
+    object-fit: cover;
+    position: relative;
+    height: 500px;
+    width: 300px;
+
+}
+
 .skills-section {
     width: 100%;
     height: 100%;
